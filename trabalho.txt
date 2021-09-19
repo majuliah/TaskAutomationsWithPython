@@ -1,0 +1,4 @@
+Automatização de tarefas:
+
+Criaremos uma ocnta no twitter
+A conta postará dados de covid e clima-tempo esporadicamente
