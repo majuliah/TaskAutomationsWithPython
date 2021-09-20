@@ -58,3 +58,17 @@ time.sleep(7200)
 #     ##não pedir o nome da cidade, enviar por default
 
 ## "http://apiadvisor.climatempo.com.br/api/v1/locale/city?name=São Paulo&state=SP&token=your-app-token"
+
+token = 'e28c15b24acee4755e78e314c3ee096b'
+city = '6037'
+
+url = 'http://apiadvisor.climatempo.com.br/api/v1/weather/locale/' + city +'/current?token=' + token
+response = requests.request('GET', url)
+retorno = json.loads(response.text)
+# print(retorno)
+
+for key in retorno:
+  print(key + ': ' + str(retorno[key]))
+
+for key in retorno['data']:
+  print(key + ': ' + str(retorno['data'][key]))
