@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import json
 import time
+import pyautogui
 
 
 #api covid
@@ -15,7 +16,7 @@ recovered = container[2].text.strip()
 
 brasil = (" O total de casos no Brasil: \n" + \
           " Casos confirmados: " + cases + "\n" + \
-          " Óbitos: " + deaths+"\n" + \
+          "✝ Óbitos: " + deaths+"\n" + \
           " Recuperações: " + recovered + "\n\n")
 
 
@@ -32,19 +33,21 @@ mundi = (" O total de casos no Mundo: \n" + \
           " Óbitos: " + deaths+"\n" + \
           " Recuperações: " + recovered + "\n\n")
 
+          
+
 
 
 print(brasil)
 print(mundi)
 
-url = "https://hooks.zapier.com/hooks/catch/10933719/b6sd95u/"
+url = "https://hooks.zapier.com/hooks/catch/10934489/b6srkfc"
 data = {'value1': brasil, 'value2': mundi}
 headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 r = requests.post(url, data=json.dumps(data), headers=headers)
 print(r.text)
 
 print("Sleeping for 6 hours")
-time.sleep(21600)
+time.sleep(7200)
 
 #api clima-tempo
 
